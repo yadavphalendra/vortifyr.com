@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Vortifyr Tech</title>
+    <meta name="description" content="Learn about Vortifyr Tech — a leading travel technology company empowering travel agencies with smart, scalable solutions including flight booking engines, CRM, and API aggregation.">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ── Header ── */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            line-height: 1;
+        }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1A4CA7;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #1A4CA7;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0d3280;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #1A4CA7;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                display: none;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* ── Page Hero ── */
+        .page-hero {
+            background: linear-gradient(135deg, #1A4CA7 0%, #002C5A 100%);
+            color: #fff;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: heroShimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes heroShimmer {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(5%, 5%); }
+        }
+
+        .page-hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .breadcrumb {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+            position: relative;
+        }
+
+        .breadcrumb a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── About Content ── */
+        .about-intro {
+            padding: 80px 60px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-intro-text {
+            flex: 1;
+        }
+
+        .about-intro-text h2 {
+            font-size: 32px;
+            color: #1A4CA7;
+            margin-bottom: 20px;
+        }
+
+        .about-intro-text p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .about-intro-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-icon-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .about-icon-box {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .about-icon-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(26, 76, 167, 0.15);
+        }
+
+        .about-icon-box i {
+            font-size: 36px;
+            color: #1A4CA7;
+            margin-bottom: 12px;
+        }
+
+        .about-icon-box h4 {
+            font-size: 14px;
+            color: #1A4CA7;
+            font-weight: 700;
+        }
+
+        /* ── Mission & Vision ── */
+        .mission-vision {
+            padding: 80px 60px;
+            background: #f9f9f9;
+        }
+
+        .mission-vision h2 {
+            font-size: 32px;
+            color: #1A4CA7;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .mv-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid #1A4CA7;
+            transition: transform 0.3s;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mv-card i {
+            font-size: 32px;
+            color: #1A4CA7;
+            margin-bottom: 15px;
+        }
+
+        .mv-card h3 {
+            font-size: 22px;
+            color: #1A4CA7;
+            margin-bottom: 15px;
+        }
+
+        .mv-card p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* ── Stats ── */
+        .stats-section {
+            padding: 60px 60px;
+            background: linear-gradient(135deg, #1A4CA7 0%, #002C5A 100%);
+            color: #fff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item h3 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        /* ── Values ── */
+        .values-section {
+            padding: 80px 60px;
+        }
+
+        .values-section h2 {
+            font-size: 32px;
+            color: #1A4CA7;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .value-card i {
+            font-size: 36px;
+            color: #1A4CA7;
+            margin-bottom: 15px;
+        }
+
+        .value-card h3 {
+            font-size: 18px;
+            color: #1A4CA7;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            padding: 80px 60px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            color: #1A4CA7;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            background: #1A4CA7;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #0d3280;
+            transform: translateY(-2px);
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            background: #002C5A;
+            color: #fff;
+            font-size: 14px;
+            padding: 60px 40px 30px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-column p i {
+            margin-right: 8px;
+            color: #ffcc00;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .about-intro {
+                flex-direction: column;
+                padding: 60px 20px;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .page-hero {
+                padding: 60px 20px;
+            }
+
+            .page-hero h1 {
+                font-size: 28px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .mission-vision, .values-section, .cta-section, .stats-section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+            <img src="/logo.png" alt="Vortifyr Tech Logo" height="40">
+        </a>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/#our-solutions">Solutions</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <h1>About Vortifyr Tech</h1>
+        <p>Empowering the travel industry with innovative technology solutions since our inception.</p>
+        <div class="breadcrumb">
+            <a href="/">Home</a> / About Us
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="about-intro">
+        <div class="about-intro-text">
+            <h2>Who We Are</h2>
+            <p>Vortifyr Tech is a forward-thinking travel technology company dedicated to providing smart, scalable, and affordable solutions to travel agencies, tour operators, and meta-search platforms worldwide.</p>
+            <p>Founded with the vision of simplifying travel technology, we help businesses launch and scale their flight booking platforms rapidly — often in under an hour. Our suite of products includes a powerful Flight Booking Engine, a purpose-built Travel CRM, seamless API Aggregation services, and professional Graphic Design tailored for the travel industry.</p>
+            <p>Based in New Delhi, India, we serve clients across the globe, building long-term partnerships rooted in trust, innovation, and results.</p>
+        </div>
+        <div class="about-intro-visual">
+            <div class="about-icon-grid">
+                <div class="about-icon-box">
+                    <i class="fas fa-plane-departure"></i>
+                    <h4>Flights</h4>
+                </div>
+                <div class="about-icon-box">
+                    <i class="fas fa-code"></i>
+                    <h4>Technology</h4>
+                </div>
+                <div class="about-icon-box">
+                    <i class="fas fa-globe"></i>
+                    <h4>Global Reach</h4>
+                </div>
+                <div class="about-icon-box">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Partnerships</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <h2>Our Mission &amp; Vision</h2>
+        <div class="mv-grid">
+            <div class="mv-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Our Mission</h3>
+                <p>To democratize travel technology by making enterprise-grade booking solutions accessible and affordable for businesses of all sizes — enabling them to focus on growth while we handle the tech.</p>
+            </div>
+            <div class="mv-card">
+                <i class="fas fa-eye"></i>
+                <h3>Our Vision</h3>
+                <p>To become the most trusted travel technology partner globally, known for innovation, reliability, and an unwavering commitment to our clients' success in the digital travel ecosystem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Travel Businesses Served</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Dedicated Support</p>
+            </div>
+            <div class="stat-item">
+                <h3>4+</h3>
+                <p>Core Products</p>
+            </div>
+            <div class="stat-item">
+                <h3>1 Hr</h3>
+                <p>Platform Launch Time</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="values-section">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>We continuously explore new technologies and approaches to deliver cutting-edge solutions for the travel industry.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-shield-halved"></i>
+                <h3>Trust &amp; Security</h3>
+                <p>Enterprise-grade security and transparent practices form the foundation of every solution we build.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-heart"></i>
+                <h3>Customer First</h3>
+                <p>Your success is our priority. We provide personalized, responsive support to ensure long-term partnerships.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Agility</h3>
+                <p>We move fast without breaking things — delivering scalable solutions rapidly to keep you ahead of the competition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your Travel Business?</h2>
+        <p>Partner with Vortifyr Tech and launch your flight booking platform in record time. Let's build something great together.</p>
+        <a href="/contact.html" class="btn">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>
+                    Empowering the travel industry with smart, scalable solutions — we continue to grow alongside our valued clients and their success stories.
+                </p>
+                <p>&nbsp;</p>
+                <p><i class="fas fa-phone"></i> +91 9891 777 374</p>
+                <p><i class="fas fa-envelope"></i> support@vortifyr.com</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="/#our-solutions">Flight Booking Engine</a></li>
+                    <li><a href="/#our-solutions">Travel CRM</a></li>
+                    <li><a href="/#our-solutions">API Aggregation</a></li>
+                    <li><a href="/#our-solutions">Graphic Design</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+                </ul>
+                <p><strong>Vortifyr Tech Pvt. Ltd.</strong><br>2171/1, Akshay Chamber, Guru Arjun Nagar, <br />Shadipur, New Delhi, Delhi 110008, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Vortifyr Tech Copyright © 2025. All Rights Reserved</p>
+            <div>
+                <a href="/shipping-and-delivery-policy.html">Shipping & Delivery Policy</a> / <a href="/refund-and-cancellation-policy.html">Refund & Cancellation Policy</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+  const toggleBtn = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  toggleBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>

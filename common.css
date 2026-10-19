@@ -1,0 +1,326 @@
+/* ══════════════════════════════════════════════════
+   Vortifyr Tech — Common Styles (shared across pages)
+   ══════════════════════════════════════════════════ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ── Header ── */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    line-height: 1;
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A4CA7;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1A4CA7;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #0d3280;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1A4CA7;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    header { padding: 20px 20px; }
+    nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        display: none;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    nav.active { display: block; }
+    nav ul { flex-direction: column; gap: 20px; }
+}
+
+/* ── Page Hero ── */
+.page-hero {
+    background: linear-gradient(135deg, #1A4CA7 0%, #002C5A 100%);
+    color: #fff;
+    padding: 80px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    animation: heroShimmer 8s ease-in-out infinite;
+}
+
+@keyframes heroShimmer {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(5%, 5%); }
+}
+
+.page-hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.page-hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.breadcrumb {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+    position: relative;
+}
+
+.breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .page-hero { padding: 60px 20px; }
+    .page-hero h1 { font-size: 28px; }
+}
+
+/* ── Buttons ── */
+.btn {
+    background: #1A4CA7;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: #0d3280;
+    transform: translateY(-2px);
+}
+
+/* ── Policy/Content Pages ── */
+.policy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+}
+
+.policy-content h2 {
+    font-size: 24px;
+    color: #1A4CA7;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e8eeff;
+}
+
+.policy-content h2:first-child {
+    margin-top: 0;
+}
+
+.policy-content h3 {
+    font-size: 18px;
+    color: #1A4CA7;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.policy-content p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.policy-content ul, .policy-content ol {
+    margin: 10px 0 20px 25px;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.policy-content ul li, .policy-content ol li {
+    margin-bottom: 8px;
+}
+
+.policy-content strong {
+    color: #333;
+}
+
+.policy-content a {
+    color: #1A4CA7;
+    text-decoration: none;
+}
+
+.policy-content a:hover {
+    text-decoration: underline;
+}
+
+.policy-meta {
+    background: #f0f4ff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #555;
+}
+
+.policy-meta strong {
+    color: #1A4CA7;
+}
+
+.policy-highlight {
+    background: #f9f9f9;
+    border-left: 4px solid #1A4CA7;
+    padding: 20px 25px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.policy-highlight p {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .policy-content { padding: 40px 20px 60px; }
+}
+
+/* ── Footer ── */
+.site-footer {
+    background: #002C5A;
+    color: #fff;
+    font-size: 14px;
+    padding: 60px 40px 30px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-column h3 {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-column p i {
+    margin-right: 8px;
+    color: #ffcc00;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .site-footer { padding: 40px 20px 20px; }
+    .footer-container { flex-direction: column; }
+    .footer-column { margin-bottom: 30px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+}

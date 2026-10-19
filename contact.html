@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vortifyr Tech</title>
+    <meta name="description"
+        content="Contact Vortifyr Tech for travel technology solutions. Based in New Delhi, India.">
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/common.css">
+    <style>
+        .contact-section {
+            padding: 80px 60px;
+            display: flex;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .contact-info {
+            flex: 1
+        }
+
+        .contact-info h2 {
+            font-size: 28px;
+            color: #1A4CA7;
+            margin-bottom: 20px
+        }
+
+        .contact-info>p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 30px
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px
+        }
+
+        .info-item .icon-circle {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1A4CA7, #002C5A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px
+        }
+
+        .info-item h4 {
+            font-size: 16px;
+            color: #1A4CA7;
+            margin-bottom: 3px
+        }
+
+        .info-item p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 0
+        }
+
+        .contact-form-wrapper {
+            flex: 1
+        }
+
+        .contact-form-wrapper h2 {
+            font-size: 28px;
+            color: #1A4CA7;
+            margin-bottom: 20px
+        }
+
+        .contact-form {
+            background: #f9f9f9;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06)
+        }
+
+        .form-group {
+            margin-bottom: 20px
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1A4CA7;
+            margin-bottom: 6px
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            background: #fff;
+            transition: border-color .3s, box-shadow .3s
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1A4CA7;
+            box-shadow: 0 0 0 3px rgba(26, 76, 167, 0.1)
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px
+        }
+
+        .btn-full {
+            width: 100%
+        }
+
+        .btn-full:disabled {
+            background: #8a9fc7;
+            cursor: not-allowed;
+            transform: none
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 30px
+        }
+
+        .form-success i {
+            font-size: 48px;
+            color: #27ae60;
+            margin-bottom: 15px
+        }
+
+        .form-success h3 {
+            color: #1A4CA7;
+            margin-bottom: 10px
+        }
+
+        .form-success p {
+            color: #555;
+            font-size: 14px
+        }
+
+        .form-error {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: #fff5f5;
+            border: 1px solid #e74c3c;
+            border-radius: 8px;
+            margin-top: 15px;
+            color: #c0392b;
+            font-size: 14px
+        }
+
+        .map-section {
+            padding: 0 60px 80px;
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .map-section h2 {
+            font-size: 28px;
+            color: #1A4CA7;
+            margin-bottom: 20px;
+            text-align: center
+        }
+
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1)
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none
+        }
+
+        @media(max-width:768px) {
+            .contact-section {
+                flex-direction: column;
+                padding: 60px 20px
+            }
+
+            .map-section {
+                padding: 0 20px 60px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/" class="logo"><img src="/logo.png" alt="Vortifyr Tech Logo" height="40"></a>
+        <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/#our-solutions">Solutions</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Reach out to discuss your travel technology needs.</p>
+        <div class="breadcrumb"><a href="/">Home</a> / Contact</div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Have questions about our travel technology solutions? Want to explore how we can help your business grow?
+                We're here to help.</p>
+            <div class="info-item">
+                <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <h4>Our Office</h4>
+                    <p>2171/1, Akshay Chamber, Guru Arjun Nagar,<br>Shadipur, New Delhi, Delhi 110008, India</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon-circle"><i class="fas fa-phone"></i></div>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+91 9891 777 374</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <h4>Email</h4>
+                    <p>support@vortifyr.com</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon-circle"><i class="fas fa-clock"></i></div>
+                <div>
+                    <h4>Business Hours</h4>
+                    <p>Monday – Saturday: 10:00 AM – 7:00 PM IST<br>Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form-wrapper">
+            <h2>Send Us a Message</h2>
+            <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                <!-- Web3Forms Access Key — Replace YOUR_ACCESS_KEY_HERE with your actual key -->
+                <input type="hidden" name="access_key" value="101b0c74-76dc-4e76-b1f8-e214edbb9841">
+                <!-- Sends a copy to your email -->
+                <input type="hidden" name="subject" id="emailSubject"
+                    value="New Contact Form Submission - Vortifyr Tech">
+                <input type="hidden" name="from_name" value="Vortifyr Tech Website">
+                <!-- Honeypot spam prevention -->
+                <input type="checkbox" name="botcheck" style="display:none">
+
+                <div class="form-group"><label for="fullName">Full Name *</label><input type="text" name="name"
+                        id="fullName" placeholder="Enter your full name" required></div>
+                <div class="form-group"><label for="email">Email Address *</label><input type="email" name="email"
+                        id="email" placeholder="Enter your email address" required></div>
+                <div class="form-group"><label for="phone">Phone Number</label><input type="tel" name="phone" id="phone"
+                        placeholder="Enter your phone number"></div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select name="inquiry_type" id="subject" required onchange="updateSubject()">
+                        <option value="">Select a subject</option>
+                        <option value="Flight Booking Engine">Flight Booking Engine</option>
+                        <option value="Travel CRM">Travel CRM</option>
+                        <option value="API Aggregation">API Aggregation</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Partnership">Partnership Inquiry</option>
+                        <option value="Support">Technical Support</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group"><label for="message">Message *</label><textarea name="message" id="message"
+                        placeholder="Tell us about your requirements..." required></textarea></div>
+                <button type="submit" class="btn btn-full" id="submitBtn"><i class="fas fa-paper-plane"></i>&nbsp; Send
+                    Message</button>
+                <div class="form-error" id="formError"></div>
+            </form>
+            <div class="form-success" id="formSuccess">
+                <i class="fas fa-check-circle"></i>
+                <h3>Message Sent Successfully!</h3>
+                <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h2>Find Us Here</h2>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8835042287684!2d77.1606!3d28.6509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03e0e6a19eb7%3A0x7da01f01726bbae4!2sShadipur%2C%20New%20Delhi%2C%20Delhi%20110008!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Empowering the travel industry with smart, scalable solutions — we continue to grow alongside our
+                    valued clients and their success stories.</p>
+                <p>&nbsp;</p>
+                <p><i class="fas fa-phone"></i> +91 9891 777 374</p>
+                <p><i class="fas fa-envelope"></i> support@vortifyr.com</p>
+            </div>
+            <div class="footer-column">
+                <h3>Solutions</h3>
+                <ul>
+                    <li><a href="/#our-solutions">Flight Booking Engine</a></li>
+                    <li><a href="/#our-solutions">Travel CRM</a></li>
+                    <li><a href="/#our-solutions">API Aggregation</a></li>
+                    <li><a href="/#our-solutions">Graphic Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+                </ul>
+                <p><strong>Vortifyr Tech Pvt. Ltd.</strong><br>2171/1, Akshay Chamber, Guru Arjun Nagar, <br />Shadipur,
+                    New Delhi, Delhi 110008, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Vortifyr Tech Copyright © 2025. All Rights Reserved</p>
+            <div><a href="/shipping-and-delivery-policy.html">Shipping & Delivery Policy</a> / <a
+                    href="/refund-and-cancellation-policy.html">Refund & Cancellation Policy</a></div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", () => { document.getElementById("nav-menu").classList.toggle("active") });
+
+        function updateSubject() {
+            const sel = document.getElementById('subject').value;
+            if (sel) document.getElementById('emailSubject').value = 'Vortifyr Contact: ' + sel;
+        }
+
+        async function handleSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const errDiv = document.getElementById('formError');
+            errDiv.style.display = 'none';
+
+            // Disable button & show loading
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>&nbsp; Sending...';
+
+            const form = document.getElementById('contactForm');
+            const formData = new FormData(form);
+            formData.append("redirect", "false"); // stay on page
+
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    form.style.display = 'none';
+                    document.getElementById('formSuccess').style.display = 'block';
+                } else {
+                    throw new Error(data.message || 'Something went wrong. Please try again.');
+                }
+            } catch (err) {
+                errDiv.textContent = err.message || 'Network error. Please check your connection and try again.';
+                errDiv.style.display = 'block';
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane"></i>&nbsp; Send Message';
+            }
+        }
+    </script>
+</body>
+
+</html>
